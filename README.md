@@ -19,11 +19,17 @@ PC：
 > h5 模型是在PC上跑的 ， tflite则是在树莓派上运行
 
 ~~~python
+#创建，激活虚拟环境
+Virtualenv,conda均可
 #安装依赖
 pip install -r requirements.txt
+
 #PC
 python Camera_Classific_H5.py
 #Rsp
+#由于opencv2在树莓派无法获取在线视频流，所以我们使用picamera替代
+sudo apt-get update
+sudo apt-get install python-picamera python3-picamera
 python Camera_Classific_tflite.py
 ~~~
 
